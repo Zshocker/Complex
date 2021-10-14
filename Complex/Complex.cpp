@@ -9,7 +9,8 @@ Complex::Complex(double R, double I)
 
 void Complex::affichage()
 {
-	std::cout << this->Re << " + i" << this->Img<<endl;
+	if(this->Img>0)std::cout << this->Re << " + " << this->Img<< "i";
+	else std::cout << this->Re << " " << this->Img << "i";
 }
 
 double Complex::module()
