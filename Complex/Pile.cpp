@@ -48,6 +48,7 @@ bool Pile::Depiler(bool debug)
 Pile Pile::Invers()
 {
 	int te;
+	int h;
 	Pile pile,temp;
 	do 
 	{
