@@ -19,5 +19,5 @@ void main()
 	cout << "\npile normal :", MsY.afficherPile();
 	other = MsY.Invers();
 	cout << "\npile inverser :", other.afficherPile();
-	//cout << "\npile normal :", MsY.afficherPile();
+	cout << "\npile normal :", MsY.afficherPile();
 }
