@@ -9,5 +9,11 @@ public:
 	void affichage();
 	double module();
 	Complex conjigue();
+	Complex operator+(Complex& C);
+	Complex operator+(double var);
+	Complex operator-(Complex& C);
+	Complex operator-(double var);
+	Complex operator*(Complex& C);
+	Complex operator*(double var);
 };
 

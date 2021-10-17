@@ -22,3 +22,33 @@ Complex Complex::conjigue()
 {
 	return Complex(this->Re,-this->Img);
 }
+
+Complex Complex::operator+(Complex& C)
+{
+	return Complex(this->Re + C.Re, this->Img + C.Img);
+}
+
+Complex Complex::operator+(double var)
+{
+	return Complex(this->Re + var,this->Img);
+}
+
+Complex Complex::operator-(Complex& C)
+{
+	return Complex(this->Re - C.Re, this->Img - C.Img);
+}
+
+Complex Complex::operator-(double var)
+{
+	return Complex(this->Re - var, this->Img);
+}
+
+Complex Complex::operator*(Complex& C)
+{
+	return Complex(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
+}
+
+Complex Complex::operator*(double var)
+{
+	return Complex(this->Img * var,this->Re * var);
+}

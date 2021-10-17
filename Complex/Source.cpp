@@ -5,13 +5,18 @@ void main()
 {
 	cout << "\nCOMPLEX\n";
 	Complex Z(5.1, 4);
-	cout << "affichage :";
-	Z.affichage();
-	cout << "\nModule :" << Z.module();
-	Complex Z2 = Z.conjigue();
-	cout << "\nConjugue :",Z2.affichage();
+	//cout << "affichage :";
+	//Z.affichage();
+	//cout << "\nModule :" << Z.module();
+	Complex Z2(46,5);
+	cout << "\nZ2 :",Z2.affichage(),cout<<endl;
+	Complex Z3 = Z2 +(double) 2;
+	cout << "\Z2 after :", Z2.affichage(),cout << endl;
+	cout << "affichage Z3:";
+	Z3.affichage();
+
 	cout << "\nPile\n";
-	Pile MsY,other;
+	Pile MsY, other;
 	MsY.Empiler(42);
 	MsY.Empiler(4);
 	MsY.Empiler(12);
