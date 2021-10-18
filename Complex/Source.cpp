@@ -10,7 +10,7 @@ void main()
 	//cout << "\nModule :" << Z.module();
 	Complex Z2(46,5);
 	cout << "\nZ2 :",Z2.affichage(),cout<<endl;
-	Complex Z3 = Z2 +(double) 2;
+	Complex Z3 = (double) 2+ Z2  ;
 	cout << "\Z2 after :", Z2.affichage(),cout << endl;
 	cout << "affichage Z3:";
 	Z3.affichage();

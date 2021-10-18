@@ -8,12 +8,12 @@ public:
 	Complex(double R, double I);
 	void affichage();
 	double module();
-	Complex conjigue();
-	Complex operator+(Complex& C);
-	Complex operator+(double var);
-	Complex operator-(Complex& C);
-	Complex operator-(double var);
-	Complex operator*(Complex& C);
-	Complex operator*(double var);
+	Complex& conjigue()const;
+	Complex& operator+(Complex& C);
+	Complex& operator+(double var);
+	Complex& operator-(Complex& C);
+	Complex& operator-(double var);
+	Complex& operator*(Complex& C);
+	Complex& operator*(double var);
 };
 

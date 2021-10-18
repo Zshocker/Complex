@@ -18,37 +18,44 @@ double Complex::module()
 	return sqrt(pow(this->Re, 2) + pow(this->Img, 2));
 }
 
-Complex Complex::conjigue()
+Complex& Complex::conjigue()const
 {
-	return Complex(this->Re,-this->Img);
+	 Complex z(this->Re,-this->Img);
+	 return z;
 }
 
-Complex Complex::operator+(Complex& C)
+Complex& Complex::operator+(Complex& C)
 {
-	return Complex(this->Re + C.Re, this->Img + C.Img);
+	 Complex W(this->Re + C.Re, this->Img + C.Img);
+	 return W;
 }
 
-Complex Complex::operator+(double var)
+Complex& Complex::operator+(double var)
 {
-	return Complex(this->Re + var,this->Img);
+	Complex W(this->Re + var,this->Img);
+	return W;
 }
 
-Complex Complex::operator-(Complex& C)
+Complex& Complex::operator-(Complex& C)
 {
-	return Complex(this->Re - C.Re, this->Img - C.Img);
+	Complex W(this->Re - C.Re, this->Img - C.Img);
+	return W;
 }
 
-Complex Complex::operator-(double var)
+Complex& Complex::operator-(double var)
 {
-	return Complex(this->Re - var, this->Img);
+	Complex W(this->Re - var, this->Img);
+	return W;
 }
 
-Complex Complex::operator*(Complex& C)
+Complex& Complex::operator*(Complex& C)
 {
-	return Complex(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
+	Complex W(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
+	return W;
 }
 
-Complex Complex::operator*(double var)
+Complex& Complex::operator*(double var)
 {
-	return Complex(this->Img * var,this->Re * var);
+	Complex W(this->Img * var,this->Re * var);
+	return W;
 }
