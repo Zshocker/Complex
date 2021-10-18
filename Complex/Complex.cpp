@@ -24,7 +24,7 @@ Complex& Complex::conjigue()const
 	 return z;
 }
 
-Complex& Complex::operator+(Complex& C)
+Complex& Complex::operator+(const Complex& C)
 {
 	 Complex W(this->Re + C.Re, this->Img + C.Img);
 	 return W;
@@ -36,7 +36,7 @@ Complex& Complex::operator+(double var)
 	return W;
 }
 
-Complex& Complex::operator-(Complex& C)
+Complex& Complex::operator-(const Complex& C)
 {
 	Complex W(this->Re - C.Re, this->Img - C.Img);
 	return W;
@@ -48,7 +48,7 @@ Complex& Complex::operator-(double var)
 	return W;
 }
 
-Complex& Complex::operator*(Complex& C)
+Complex& Complex::operator*(const Complex& C)
 {
 	Complex W(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
 	return W;
@@ -57,5 +57,13 @@ Complex& Complex::operator*(Complex& C)
 Complex& Complex::operator*(double var)
 {
 	Complex W(this->Img * var,this->Re * var);
+	return W;
+}
+
+Complex& Complex::operator/(const Complex& C)
+{
+	double z = (this->Re * C.Re + this->Img * C.Img) / (pow(C.Re,2)+pow(C.Img,2));
+	double s = (this->Img * C.Re - this->Re * C.Img) / (pow(C.Re, 2) + pow(C.Img, 2));
+	Complex W(z,s);
 	return W;
 }

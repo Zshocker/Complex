@@ -9,11 +9,12 @@ public:
 	void affichage();
 	double module();
 	Complex& conjigue()const;
-	Complex& operator+(Complex& C);
+	Complex& operator+(const Complex& C);
 	Complex& operator+(double var);
-	Complex& operator-(Complex& C);
+	Complex& operator-(const Complex& C);
 	Complex& operator-(double var);
-	Complex& operator*(Complex& C);
+	Complex& operator*(const Complex& C);
 	Complex& operator*(double var);
+	Complex& operator/(const Complex& C);
 };
 
