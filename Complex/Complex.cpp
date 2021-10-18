@@ -7,6 +7,12 @@ Complex::Complex(double R, double I)
 	this->Img = I;
 }
 
+Complex& Complex::Create_Complex(double R, double I)
+{
+	Complex* W =new Complex(R,I);
+	return *W;
+}
+
 void Complex::affichage()
 {
 	if(this->Img>0)std::cout << this->Re << " + " << this->Img<< "i";
@@ -20,50 +26,50 @@ double Complex::module()
 
 Complex& Complex::conjigue()const
 {
-	 Complex z(this->Re,-this->Img);
-	 return z;
+	 Complex *z=new Complex(this->Re,-this->Img);
+	 return *z;
 }
 
 Complex& Complex::operator+(const Complex& C)
 {
-	 Complex W(this->Re + C.Re, this->Img + C.Img);
-	 return W;
+	 Complex *W=new Complex(this->Re + C.Re, this->Img + C.Img);
+	 return *W;;
 }
 
 Complex& Complex::operator+(double var)
 {
-	Complex W(this->Re + var,this->Img);
-	return W;
+	Complex *W=new Complex(this->Re + var,this->Img);
+	return *W;;
 }
 
 Complex& Complex::operator-(const Complex& C)
 {
-	Complex W(this->Re - C.Re, this->Img - C.Img);
-	return W;
+	Complex *W=new Complex(this->Re - C.Re, this->Img - C.Img);
+	return *W;;
 }
 
 Complex& Complex::operator-(double var)
 {
-	Complex W(this->Re - var, this->Img);
-	return W;
+	Complex *W=new Complex(this->Re - var, this->Img);
+	return *W;;
 }
 
 Complex& Complex::operator*(const Complex& C)
 {
-	Complex W(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
-	return W;
+	Complex *W=new Complex(this->Re * C.Re - this->Img * C.Img, this->Re * C.Img + C.Re * this->Img);
+	return *W;;
 }
 
 Complex& Complex::operator*(double var)
 {
-	Complex W(this->Img * var,this->Re * var);
-	return W;
+	Complex *W=new Complex(this->Img * var,this->Re * var);
+	return *W;;
 }
 
 Complex& Complex::operator/(const Complex& C)
 {
 	double z = (this->Re * C.Re + this->Img * C.Img) / (pow(C.Re,2)+pow(C.Img,2));
 	double s = (this->Img * C.Re - this->Re * C.Img) / (pow(C.Re, 2) + pow(C.Img, 2));
-	Complex W(z,s);
-	return W;
+	Complex *W=new Complex(z,s);
+	return *W;;
 }

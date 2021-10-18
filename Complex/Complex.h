@@ -4,8 +4,10 @@ using namespace std;
 class Complex
 {
 	double Re, Img;
+	
+private:Complex(double R, double I);
 public:
-	Complex(double R, double I);
+	static Complex& Create_Complex(double R, double I);
 	void affichage();
 	double module();
 	Complex& conjigue()const;
