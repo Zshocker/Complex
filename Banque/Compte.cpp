@@ -1,9 +1,11 @@
 #include "Compte.h"
 #include<iostream>
 #include<string>
-Compte::Compte(long numCom, char* nom, double solde)
+long Compte::numC = 0;
+Compte::Compte(char* nom, double solde)
 {
-    this->numCompte = numCom;
+    Compte::numC++;
+    this->numCompte = Compte::numC;
     strcpy_s(this->nomProprietaire, nom);
     this->solde = solde;
 }
@@ -22,7 +24,7 @@ void Compte::deposerArgent(double amount)
     this->solde += amount;
 }
 
-void Compte::consulterSolde()
+void Compte::consulterSolde()const
 {
     std::cout << "solde de "<<this->nomProprietaire <<" :" << this->solde<<std::endl;
 }
