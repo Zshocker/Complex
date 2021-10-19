@@ -1,21 +1,17 @@
 #include"Complex.h"
 #include"Pile.h"
 using namespace std;
-void main() 
+int main() 
 {
 	cout << "\nCOMPLEX\n";
-	Complex Z = Complex::Create_Complex(5.2,4);
-	Z.affichage();
-
-
-	/*Complex Z(5.1, 4);
+	Complex Z(5.1, 4);
 	//cout << "affichage :";
 	//Z.affichage();
 	//cout << "\nModule :" << Z.module();
 	Complex Z2(46,5);
 	cout << "\nZ2 :",Z2.affichage(),cout<<endl;
-	Complex Z3 = Z2  ;
-	cout << "\Z2 after :", Z2.affichage(),cout << endl;
+	Complex Z3 =  (double)5 + Z2 ;
+	cout << "\nZ2 after :", Z2.affichage(),cout << endl;
 	cout << "affichage Z3:";
 	Z3.affichage();
 
@@ -28,5 +24,6 @@ void main()
 	cout << "\npile normal :", MsY.afficherPile();
 	other = MsY.Invers();
 	cout << "\npile inverser :", other.afficherPile();
-	cout << "\npile normal :", MsY.afficherPile();*/
+	cout << "\npile normal :", MsY.afficherPile();
+	return 0;
 }

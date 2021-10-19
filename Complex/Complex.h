@@ -5,18 +5,22 @@ class Complex
 {
 	double Re, Img;
 	
-private:Complex(double R, double I);
+	
 public:
+	Complex(double R, double I);
 	static Complex& Create_Complex(double R, double I);
-	void affichage();
-	double module();
+	void  affichage() const;
+	double module() const;
 	Complex& conjigue()const;
-	Complex& operator+(const Complex& C);
-	Complex& operator+(double var);
-	Complex& operator-(const Complex& C);
-	Complex& operator-(double var);
-	Complex& operator*(const Complex& C);
-	Complex& operator*(double var);
-	Complex& operator/(const Complex& C);
+	Complex& operator+(const Complex& C)const;
+	Complex& operator+(double var)const;
+	Complex& operator-(const Complex& C)const;
+	Complex& operator-(double var)const;
+	Complex& operator*(const Complex& C)const;
+	Complex& operator*(double var)const;
+	Complex& operator/(const Complex& C)const;
 };
-
+inline
+Complex& operator+(double r,const Complex& C) {
+	return C+(double)r;
+}
