@@ -2,7 +2,17 @@
 #include<iostream>
 Pile::Pile()
 {
+	this->Table[0] = 0;
 	this->sommet = -1;
+}
+
+Pile::Pile(const Pile& P)
+{
+	this->sommet = -1;
+	for (int i = 0; i <= P.sommet; i++)
+	{
+		this->Empiler(P.Table[i]);
+	}
 }
 
 bool Pile::PileVide()
@@ -45,22 +55,15 @@ bool Pile::Depiler(bool debug)
 	return true;
 }
 
-Pile Pile::Invers()
+Pile& Pile::Invers()
 {
 	int te;
-	Pile pile,temp;
+	Pile *pile=new Pile(),temp(*this);
 	do 
-	{
-		te = this->Sommet(false);
-		if (!this->Depiler(false))break;
-		pile.Empiler(te);
-		temp.Empiler(te);
-	} while (true);
-	do
 	{
 		te = temp.Sommet(false);
 		if (!temp.Depiler(false))break;
-		this->Empiler(te);
+		pile->Empiler(te);
 	} while (true);
-	return pile;
+	return *pile;
 }

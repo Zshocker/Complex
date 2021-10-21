@@ -6,11 +6,12 @@ class Pile
 	int sommet;
 public:
 	Pile();
+	Pile(const Pile&);
 	bool PileVide();
 	void afficherPile();
 	int Sommet(bool debug=true);
 	void Empiler(int val);
 	bool Depiler(bool debug=true);
-	Pile Invers();
+	Pile& Invers();
 };
 
