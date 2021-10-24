@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Compte.h" />
+    <ClInclude Include="GC.h" />
     <ClInclude Include="MAD.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Compte.cpp" />
+    <ClCompile Include="GC.cpp" />
     <ClCompile Include="MAD.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>

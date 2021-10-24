@@ -24,6 +24,9 @@
     <ClInclude Include="MAD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compte.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MAD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

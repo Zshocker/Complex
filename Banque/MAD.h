@@ -1,8 +1,15 @@
 #pragma once
-class MAD
-{
-	double valeur;
-public:
-	MAD(double nad);
+namespace Banque {
+	class MAD
+	{
+	private:
+		double valeur;
+	public:
+		MAD(double val);
+		MAD& operator+(const MAD& M) const;
+		MAD& operator-(const MAD& M) const;
+		bool operator<=(const MAD& M)const;
+		bool operator>=(const MAD& M) const;
+		void afficher() const;
+	};
 };
-

@@ -1,15 +1,12 @@
 #include"Compte.h"
 #include<iostream>
-int main() {
-	Compte A((char*)"User1 user1",80050.175);
-	Compte C((char*)"User2 user2", 10);
-	A.deposerArgent(12000);
-	std::cout << "before transfer" << std::endl;
-	A.consulterSolde();
-	C.consulterSolde();
-	A.transfererArgent(C, 10000);
-	std::cout << "after transfer" << std::endl;
-	A.consulterSolde();
-	C.consulterSolde();
-	return 1;
+using namespace Banque;
+int main() 
+{
+	Client* Cl = new Client("User1", "user1", "address");
+	Compte*A=new Compte(Cl,new MAD(2000));
+	Compte *B=new Compte(Cl, new MAD(1000));
+	Compte *C=new Compte(*A);
+	A->verser(new MAD(120), *B);
+	B->consulter();
 }

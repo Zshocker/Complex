@@ -1,21 +1,30 @@
 #pragma once
 #include"Client.h"
-#include"MAD.h"
+#include "MAD.h"
+#include "GC.h"
 namespace Banque {
 	class Compte
 	{
-		const long numCompte;
+		//attributs
+	private:
+		const int numcompte;
+		static int count;
 		Client* titulaire;
 		MAD* solde;
-		static MAD* Plafond;
-		static long numC;
+		static MAD* plafond;
+		GC* ref;
+		// Methodes
 	public:
-		Compte(char* nom, double solde);
-		bool retirerArgent(double amount);
-		void deposerArgent(double amount);
-		void consulterSolde()const;
-		bool transfererArgent(Compte& Other, double amount);
+		Compte(Client*, MAD*); // avec parametres
+		Compte(const Compte&);
+		void crediter(MAD* M);
+		bool debiter(MAD* M);
+		bool verser(MAD* M, Compte& C);
+		void consulter()const;
+		~Compte();
+
+
 
 	};
 
-}
+};
