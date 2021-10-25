@@ -14,16 +14,4 @@ int main()
 	cout << "\nZ2 after :", Z2.affichage(),cout << endl;
 	cout << "affichage Z3:";
 	Z3.affichage();
-
-	cout << "\nPile\n";
-	Pile MsY, other;
-	MsY.Empiler(42);
-	MsY.Empiler(4);
-	MsY.Empiler(12);
-	MsY.Empiler(48);
-	cout << "\npile normal :", MsY.afficherPile();
-	other = MsY.Invers();
-	cout << "\npile inverser :", other.afficherPile();
-	cout << "\npile normal :", MsY.afficherPile();
-	return 0;
 }

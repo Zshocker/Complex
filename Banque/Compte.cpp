@@ -54,16 +54,20 @@ void Banque::Compte::consulter() const
 }
 
 Compte::~Compte() {
+	if (this->ref) {
+		int t = this->ref->decr();
+		if (this->titulaire != NULL && t == 0)
+		{
+			delete this->titulaire;
+			this->titulaire = NULL;
+			delete this->ref;
+			this->ref = NULL;
+		}
+		if (this->solde != NULL && t == 0)
+		{
+			delete this->solde;
+			this->solde = NULL;
+		}
+	}
 
-	int t = this->ref->decr();
-	if (this->titulaire != NULL && t == 0)
-	{
-		delete this->titulaire;
-		this->titulaire = NULL;
-	}
-	if (this->solde != NULL && t == 0)
-	{
-		delete this->solde;
-		this->solde = NULL;
-	}
 }
