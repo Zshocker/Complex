@@ -21,10 +21,9 @@ void Banque::Compte::crediter(Devise* M)
 
 bool Banque::Compte::debiter(Devise* M)
 {
-	if (*M <= *(Compte::plafond))
+	if (*solde>=*M && *M <= *(Compte::plafond))
 	{
-		*(this->solde) = *(this->solde) - *M;
-		this->add_transaction(M, false);
+		this->debiter_direct(M);
 		return true;
 	}
 	return false;
@@ -58,6 +57,11 @@ bool Banque::Compte::check_moitier(Devise* D) const
 	return false;
 }
 
+bool Banque::Compte::check_Solde_sup(Devise& D) const
+{
+	return (*solde>=D);
+}
+
 void Banque::Compte::debiter_direct(Devise* M)
 {
 	*(this->solde) = *(this->solde) - *M;
@@ -70,7 +74,7 @@ void Banque::Compte::add_transaction(Devise * Amount, bool Type)
 }
 void Banque::Compte::consulter() const
 {
-	cout << "num compte=" << this->numcompte << endl;
+	cout << "num compte=" << this->numcompte << endl<< "le solde est : ";
 	this->solde->afficher();
 	cout << "titulaire " << endl;
 	this->titulaire->Afficher();

@@ -143,8 +143,10 @@
     <ClInclude Include="Compte.h" />
     <ClInclude Include="CompteCourant.h" />
     <ClInclude Include="CompteEpargne.h" />
+    <ClInclude Include="ComptePayant.h" />
     <ClInclude Include="GC.h" />
     <ClInclude Include="Devise.h" />
+    <ClInclude Include="MAD.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
@@ -152,8 +154,10 @@
     <ClCompile Include="Compte.cpp" />
     <ClCompile Include="CompteCourant.cpp" />
     <ClCompile Include="CompteEpargne.cpp" />
+    <ClCompile Include="ComptePayant.cpp" />
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Devise.cpp" />
+    <ClCompile Include="MAD.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>

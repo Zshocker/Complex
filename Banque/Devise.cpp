@@ -49,8 +49,14 @@ bool Devise::operator>=(const Devise& M) const
 	return this->valeur >= M.valeur;
 }
 
-void Devise::afficher() const
+double Banque::Devise::convert(double Ratio)const
 {
-	cout << "le solde est : " << this->valeur << "Devise" << endl;
+	return valeur*Ratio;
 }
+
+void Banque::Devise::afficher() const
+{
+	cout<<"A";
+}
+
 

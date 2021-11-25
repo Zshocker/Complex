@@ -13,6 +13,7 @@ namespace Banque {
 		Devise& operator/(const Devise& M) const;
 		bool operator<=(const Devise& M)const;
 		bool operator>=(const Devise& M) const;
-		void afficher() const;
+		double convert(double Ratio)const;
+		virtual void afficher() const;
 	};
 };

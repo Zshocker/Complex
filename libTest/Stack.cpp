@@ -69,7 +69,7 @@ void Algo::Stack::garbage(Stack* s)
 
 Algo::Stack::Stack()
 {
-
+	this->head = NULL;
 }
 
 Algo::Stack::~Stack()

@@ -23,14 +23,14 @@ namespace Banque {
 		Compte(Client*, Devise*);
 		Compte(const Compte&);
 		virtual void crediter(Devise* M);
-		virtual bool debiter(Devise* M);
+		virtual bool debiter(Devise* M)=0;
 		bool verser(Devise* M, Compte& C);
-		virtual void calculInteret()=0;
 		void consulter()const;
 		~Compte();
 	protected:
 		void add_pursontage(double D);
 		bool check_moitier(Devise* D)const;
+		bool check_Solde_sup(Devise& D)const;
 		void debiter_direct(Devise*M);
 	private:
 		void add_transaction(Devise* Amount,bool Type);

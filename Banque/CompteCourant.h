@@ -3,9 +3,9 @@
 namespace Banque {
     class CompteCourant :public Compte
     {
-        bool Payon;
+        Devise* decouvert;
     public:
-        CompteCourant(Client*, Devise*,bool);
+        CompteCourant(Client*, Devise*,Devise*);
         void crediter(Devise* D);
         bool debiter(Devise* D);
     };
