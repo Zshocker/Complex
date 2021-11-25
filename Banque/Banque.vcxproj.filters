@@ -21,10 +21,19 @@
     <ClInclude Include="Client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MAD.h">
+    <ClInclude Include="Devise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteEpargne.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteCourant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,10 +47,19 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MAD.cpp">
+    <ClCompile Include="Devise.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompteEpargne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompteCourant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

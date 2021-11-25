@@ -2,26 +2,29 @@
 #include<iostream>
 using namespace std;
 using namespace Banque;
-MAD* Compte::plafond = new MAD(2000);
+Devise* Compte::plafond = new Devise(2000);
 int Compte::count = 0;
 
-Banque::Compte::Compte(Client* titu, MAD* sol) :numcompte(++count)
+Banque::Compte::Compte(Client* titu, Devise* sol) :numcompte(++count)
 {
 	this->ref = new GC(1);
 	this->titulaire = titu;
 	this->solde = sol;
+	this->titulaire->add_Compte(this);
 }
 
-void Banque::Compte::crediter(MAD* M)
+void Banque::Compte::crediter(Devise* M)
 {
 	*(this->solde) = *(this->solde) + *M;
+	this->add_transaction(M, true);
 }
 
-bool Banque::Compte::debiter(MAD* M)
+bool Banque::Compte::debiter(Devise* M)
 {
-	if (*(this->solde) >= *M && *M <= *(Compte::plafond))
+	if (*M <= *(Compte::plafond))
 	{
 		*(this->solde) = *(this->solde) - *M;
+		this->add_transaction(M, false);
 		return true;
 	}
 	return false;
@@ -35,7 +38,7 @@ Banque::Compte::Compte(const Compte& c) :numcompte(c.numcompte)
 	this->titulaire = c.titulaire;
 }
 
-bool Banque::Compte::verser(MAD* M, Compte& C)
+bool Banque::Compte::verser(Devise* M, Compte& C)
 {
 	if (this->debiter(M) == true) {
 		C.crediter(M);
@@ -44,7 +47,27 @@ bool Banque::Compte::verser(MAD* M, Compte& C)
 	return false;
 }
 
+void Banque::Compte::add_pursontage(double D)
+{
+	*solde = *solde + *solde * (D/100);
+}
 
+bool Banque::Compte::check_moitier(Devise* D) const
+{
+	if (*solde / Devise(2) >= *D)return true;
+	return false;
+}
+
+void Banque::Compte::debiter_direct(Devise* M)
+{
+	*(this->solde) = *(this->solde) - *M;
+	this->add_transaction(M, false);
+}
+
+void Banque::Compte::add_transaction(Devise * Amount, bool Type)
+{
+	Trans.push_back(new Transaction(Amount, Type));
+}
 void Banque::Compte::consulter() const
 {
 	cout << "num compte=" << this->numcompte << endl;
@@ -54,7 +77,7 @@ void Banque::Compte::consulter() const
 }
 
 Compte::~Compte() {
-	if (this->ref) {
+	/*if (this->ref) {
 		int t = this->ref->decr();
 		if (this->titulaire != NULL && t == 0)
 		{
@@ -69,5 +92,5 @@ Compte::~Compte() {
 			this->solde = NULL;
 		}
 	}
-
+	*/
 }
