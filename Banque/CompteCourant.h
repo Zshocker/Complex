@@ -6,7 +6,6 @@ namespace Banque {
         Devise* decouvert;
     public:
         CompteCourant(Client*, Devise*,Devise*);
-        void crediter(Devise* D);
         bool debiter(Devise* D);
     };
 }

@@ -1,10 +1,10 @@
 #pragma once
-#include "Compte.h"
+#include "CompteCourant.h"
 namespace Banque {
-    class ComptePayant : public Compte
+    class ComptePayant : public CompteCourant
     {
     public:
-        ComptePayant(Client*, Devise*);
+        ComptePayant(Client*, Devise*, Devise*);
         bool debiter(Devise*D);
         void crediter(Devise* M);
     };

@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 namespace Banque {
+	class Compte;
 	class Transaction
 	{
 		static long incr;
@@ -10,9 +11,9 @@ namespace Banque {
 		string date;
 		string heure;
 		Devise* Val;
-		bool Type;//false: out ,true: in
+		Compte* E;
 	public:
-		Transaction(Devise* Val, bool);
+		Transaction(Devise* Val, Compte*);
 		void Print();
 	};
 }

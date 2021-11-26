@@ -6,10 +6,7 @@ Banque::CompteCourant::CompteCourant(Client*A, Devise*V, Devise*E):Compte(A,V)
 	decouvert = new Devise(*E);
 }
 
-void Banque::CompteCourant::crediter(Devise* D)
-{
-	this->Compte::crediter(D);
-}
+
 
 bool Banque::CompteCourant::debiter(Devise* D)
 {

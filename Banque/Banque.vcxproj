@@ -147,6 +147,7 @@
     <ClInclude Include="GC.h" />
     <ClInclude Include="Devise.h" />
     <ClInclude Include="MAD.h" />
+    <ClInclude Include="operationV.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,7 @@
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Devise.cpp" />
     <ClCompile Include="MAD.cpp" />
+    <ClCompile Include="operationV.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>

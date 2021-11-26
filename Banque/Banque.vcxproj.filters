@@ -42,6 +42,9 @@
     <ClInclude Include="MAD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="operationV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compte.cpp">
@@ -72,6 +75,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MAD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="operationV.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
