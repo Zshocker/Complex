@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AppBanque.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Compte.h" />
     <ClInclude Include="CompteCourant.h" />
@@ -147,10 +148,12 @@
     <ClInclude Include="GC.h" />
     <ClInclude Include="Devise.h" />
     <ClInclude Include="MAD.h" />
+    <ClInclude Include="OperationR.h" />
     <ClInclude Include="operationV.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AppBanque.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Compte.cpp" />
     <ClCompile Include="CompteCourant.cpp" />
@@ -159,6 +162,7 @@
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Devise.cpp" />
     <ClCompile Include="MAD.cpp" />
+    <ClCompile Include="OperationR.cpp" />
     <ClCompile Include="operationV.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Transaction.cpp" />

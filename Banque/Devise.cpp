@@ -56,7 +56,7 @@ double Banque::Devise::convert(double Ratio)const
 
 void Banque::Devise::afficher() const
 {
-	cout<<"A";
+	cout<<valeur;
 }
 
 

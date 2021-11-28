@@ -1,11 +1,10 @@
 #pragma once
 #include "Transaction.h"
-
 namespace Banque {
-    class OperationV :public Transaction
+    class OperationR : public Transaction
     {
     public:
-        OperationV(Devise*E,Compte*c);
+        OperationR(Devise* E, Compte* c);
         void Print()const;
     private:
         static string libel;

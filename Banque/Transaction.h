@@ -14,6 +14,8 @@ namespace Banque {
 		Compte* E;
 	public:
 		Transaction(Devise* Val, Compte*);
-		void Print();
+		void print_detail()const;
+		void print_Montant()const;
+		virtual void Print()const=0;
 	};
 }

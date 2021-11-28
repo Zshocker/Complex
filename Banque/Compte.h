@@ -16,7 +16,6 @@ namespace Banque {
 		Client* titulaire;
 		Devise* solde;
 		static Devise* plafond;
-		GC* ref;
 		vector<Transaction*> Trans;
 		// Methodes
 	public:
@@ -26,6 +25,7 @@ namespace Banque {
 		virtual bool debiter(Devise* M)=0;
 		bool verser(Devise* M, Compte& C);
 		void consulter()const;
+		void consulter_with_history()const;
 		~Compte();
 	protected:
 		void add_pursontage(double D);

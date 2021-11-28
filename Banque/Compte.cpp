@@ -1,4 +1,6 @@
 #include "Compte.h"
+#include"OperationR.h"
+#include"operationV.h"
 #include<iostream>
 using namespace std;
 using namespace Banque;
@@ -7,7 +9,6 @@ int Compte::count = 0;
 
 Banque::Compte::Compte(Client* titu, Devise* sol) :numcompte(++count)
 {
-	this->ref = new GC(1);
 	this->titulaire = titu;
 	this->solde = sol;
 	this->titulaire->add_Compte(this);
@@ -31,8 +32,6 @@ bool Banque::Compte::debiter(Devise* M)
 
 Banque::Compte::Compte(const Compte& c) :numcompte(c.numcompte)
 {
-	this->ref = c.ref;
-	this->ref->incre();
 	this->solde = c.solde;
 	this->titulaire = c.titulaire;
 }
@@ -70,7 +69,8 @@ void Banque::Compte::debiter_direct(Devise* M)
 
 void Banque::Compte::add_transaction(Devise * Amount, bool Type)
 {
-	Trans.push_back(new Transaction(Amount, Type));
+	if(Type)Trans.push_back(new OperationV(Amount, this));
+	else Trans.push_back(new OperationV(Amount, this));
 }
 void Banque::Compte::consulter() const
 {
@@ -80,21 +80,20 @@ void Banque::Compte::consulter() const
 	this->titulaire->Afficher();
 }
 
-Compte::~Compte() {
-	/*if (this->ref) {
-		int t = this->ref->decr();
-		if (this->titulaire != NULL && t == 0)
-		{
-			delete this->titulaire;
-			this->titulaire = NULL;
-			delete this->ref;
-			this->ref = NULL;
-		}
-		if (this->solde != NULL && t == 0)
-		{
-			delete this->solde;
-			this->solde = NULL;
-		}
+void Banque::Compte::consulter_with_history() const
+{
+	consulter();
+	for (int i = 0; i < Trans.size(); i++)
+	{
+		Trans[i]->Print();
 	}
-	*/
+}
+
+Compte::~Compte() {
+	delete solde;
+	for (int i = 0; i < Trans.size(); i++)
+	{
+		delete Trans[i];
+		Trans[i]=NULL;
+	}
 }

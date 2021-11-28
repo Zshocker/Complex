@@ -9,11 +9,13 @@ Banque::Transaction::Transaction(Devise* Val, Compte*c) :numT(++incr)
 	this->E = c;
 }
 
-void Banque::Transaction::Print()
+void Banque::Transaction::print_detail() const
 {
 	cout << "Date : " << date << ", Heure : " << heure << endl;
 	cout << "Transaction num: " << numT << endl;
-	cout << "Montant ";
+}
+
+void Banque::Transaction::print_Montant() const
+{
 	Val->afficher();
-	cout << endl;
 }
