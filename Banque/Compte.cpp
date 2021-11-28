@@ -70,7 +70,7 @@ void Banque::Compte::debiter_direct(Devise* M)
 void Banque::Compte::add_transaction(Devise * Amount, bool Type)
 {
 	if(Type)Trans.push_back(new OperationV(Amount, this));
-	else Trans.push_back(new OperationV(Amount, this));
+	else Trans.push_back(new OperationR(Amount, this));
 }
 void Banque::Compte::consulter() const
 {

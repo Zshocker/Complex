@@ -33,16 +33,13 @@ namespace Banque {
 				case 1:
 					cout << "donner la valeur en MAD:";
 					cin >> Val;
-					if (A.debiter(VAL = new MAD(Val)))cout << "Done!" << endl;
+					if (A.debiter(new MAD(Val)))cout << "Done!" << endl;
 					else cout << "Not Enough money" << endl;
-					delete VAL;
 					break;
 				case 2:
 					cout << "donner la valeur en MAD:";
 					cin >> Val;
-					VAL = new MAD(Val);
-					A.crediter(VAL);
-					delete VAL;
+					A.crediter(new MAD(Val));
 					break;
 				case 3:
 					A.consulter();
