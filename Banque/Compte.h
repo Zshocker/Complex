@@ -26,7 +26,7 @@ namespace Banque {
 		bool verser(Devise* M, Compte& C);
 		void consulter()const;
 		void consulter_with_history()const;
-		~Compte();
+		virtual ~Compte();
 	protected:
 		void add_pursontage(double D);
 		bool check_moitier(Devise* D)const;
