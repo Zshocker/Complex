@@ -4,6 +4,7 @@
 #include"ComptePayant.h"
 #include"Client.h"
 #include "MAD.h"
+#include"Dollar.h"
 #include<iostream>
 namespace Banque {
 	class AppBanque
@@ -37,9 +38,9 @@ namespace Banque {
 					else cout << "Not Enough money" << endl;
 					break;
 				case 2:
-					cout << "donner la valeur en MAD:";
+					cout << "donner la valeur en Dollar:";
 					cin >> Val;
-					A.crediter(new MAD(Val));
+					A.crediter(new Dollar(Val));
 					break;
 				case 3:
 					A.consulter();

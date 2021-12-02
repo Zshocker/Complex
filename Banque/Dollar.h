@@ -1,12 +1,12 @@
 #pragma once
 #include "Devise.h"
 namespace Banque {
-    class MAD : public Devise
+    class Dollar :public Devise
     {
         const static double Ratio;
     public:
-        MAD(double Val);
-        MAD(const MAD& Val);
+        Dollar(double Val);
+        Dollar(const Dollar& Val);
         void afficher()const override;
         Devise* Clone() const;
         Devise* Clone_no_convert(double val) const;

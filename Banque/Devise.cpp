@@ -7,34 +7,39 @@ Devise::Devise(double val)
 	this->valeur = val;
 }
 
+Banque::Devise::Devise(const Devise& val)
+{
+	this->valeur = val.valeur;
+}
+
 Devise& Devise::operator+(const Devise& M) const
 {
-	Devise* res = new Devise(this->valeur + M.valeur);
+	Devise* res = this->Clone_no_convert(this->valeur + M.valeur);
 	return *res;
 }
 
 Devise& Devise::operator-(const Devise& M) const
 {
-	Devise* res = new Devise(this->valeur - M.valeur);
+	Devise* res = this->Clone_no_convert(this->valeur - M.valeur);
 	return *res;
 }
 
 Devise& Banque::Devise::operator*(const Devise& M) const
 {
-	Devise* res = new Devise(this->valeur * M.valeur);
+	Devise* res = this->Clone_no_convert(this->valeur * M.valeur);
 	return *res;
 }
 
 Devise& Banque::Devise::operator*(double val) const
 {
-	Devise* res = new Devise(this->valeur * val);
+	Devise* res = this->Clone_no_convert(this->valeur * val);
 	return *res;
 }
 
 Devise& Banque::Devise::operator/(const Devise& M) const
 {
 	if (M.valeur!=0) {
-		Devise* res = new Devise(this->valeur / M.valeur);
+		Devise* res = this->Clone_no_convert(this->valeur / M.valeur);
 		return *res;
 	}
 }

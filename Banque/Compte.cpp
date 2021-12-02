@@ -1,10 +1,11 @@
 #include "Compte.h"
 #include"OperationR.h"
 #include"operationV.h"
+#include"MAD.h"
 #include<iostream>
 using namespace std;
 using namespace Banque;
-Devise* Compte::plafond = new Devise(2000);
+Devise* Compte::plafond = new MAD(2000);
 int Compte::count = 0;
 
 Banque::Compte::Compte(Client* titu, Devise* sol) :numcompte(++count)
@@ -52,7 +53,7 @@ void Banque::Compte::add_pursontage(double D)
 
 bool Banque::Compte::check_moitier(Devise* D) const
 {
-	if (*solde / Devise(2) >= *D)return true;
+	if (*solde / *(solde->Clone_no_convert(2)) >= *D)return true;
 	return false;
 }
 

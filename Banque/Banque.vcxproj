@@ -143,8 +143,10 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Compte.h" />
     <ClInclude Include="CompteCourant.h" />
+    <ClInclude Include="CompteEpagnePayant.h" />
     <ClInclude Include="CompteEpargne.h" />
     <ClInclude Include="ComptePayant.h" />
+    <ClInclude Include="Dollar.h" />
     <ClInclude Include="GC.h" />
     <ClInclude Include="Devise.h" />
     <ClInclude Include="MAD.h" />
@@ -157,8 +159,10 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Compte.cpp" />
     <ClCompile Include="CompteCourant.cpp" />
+    <ClCompile Include="CompteEpagnePayant.cpp" />
     <ClCompile Include="CompteEpargne.cpp" />
     <ClCompile Include="ComptePayant.cpp" />
+    <ClCompile Include="Dollar.cpp" />
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Devise.cpp" />
     <ClCompile Include="MAD.cpp" />

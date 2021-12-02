@@ -1,7 +1,7 @@
 #pragma once
 #include "CompteCourant.h"
 namespace Banque {
-    class ComptePayant : public CompteCourant
+    class ComptePayant : virtual public CompteCourant
     {
     public:
         ComptePayant(Client*, Devise*, Devise*);

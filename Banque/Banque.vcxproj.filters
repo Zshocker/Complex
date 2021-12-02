@@ -51,6 +51,12 @@
     <ClInclude Include="AppBanque.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dollar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteEpagnePayant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compte.cpp">
@@ -90,6 +96,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AppBanque.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dollar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompteEpagnePayant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

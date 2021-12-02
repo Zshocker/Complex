@@ -1,7 +1,7 @@
 #pragma once
 #include "Compte.h"
 namespace Banque {
-    class CompteEpargne : public Compte
+    class CompteEpargne : virtual public Compte
     {
         double TauxInterêt;
     public:

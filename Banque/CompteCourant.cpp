@@ -3,11 +3,8 @@
 Banque::CompteCourant::CompteCourant(Client*A, Devise*V, Devise*E):Compte(A,V)
 {
 	assert(*V >= *E);
-	decouvert = new Devise(*E);
+	decouvert = E;
 }
-
-
-
 bool Banque::CompteCourant::debiter(Devise* D)
 {
 	if (!check_Solde_sup(*D + *decouvert))return false;

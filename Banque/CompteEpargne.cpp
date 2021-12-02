@@ -15,4 +15,5 @@ bool Banque::CompteEpargne::debiter(Devise*D)
 {
 	if (!this->check_moitier(D))return false;
 	this->Compte::debiter(D);
+	return true;
 }
