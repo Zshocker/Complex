@@ -2,6 +2,7 @@
 #include"CompteCourant.h"
 #include"CompteEpargne.h"
 #include"ComptePayant.h"
+#include"CompteEpagnePayant.h"
 #include"Client.h"
 #include "MAD.h"
 #include"Dollar.h"
@@ -15,7 +16,7 @@ namespace Banque {
 		void Mymain()
 		{
 			Client* Cl = new Client("User1", "user1", "address");
-			ComptePayant A(Cl, new MAD(2000), new MAD(100));
+			CompteEpagnePayant A(Cl, new MAD(2000), new MAD(100),5);
 			int choix;
 			double Val;
 			MAD* VAL;
