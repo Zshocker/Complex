@@ -27,6 +27,7 @@ Devise& Devise::operator-(const Devise& M) const
 Devise& Banque::Devise::operator*(const Devise& M) const
 {
 	Devise* res = this->Clone_no_convert(this->valeur * M.valeur);
+	Devise* res = new Devise(this->valeur * M.valeur);
 	return *res;
 }
 
