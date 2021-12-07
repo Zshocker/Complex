@@ -1,13 +1,14 @@
 #pragma once
 #include "Devise.h"
 namespace Banque {
-    class Dollar :public Devise
+    class Euro :
+        public Devise
     {
+        const static double RatioToDollar;
         const static double RatioToMAD;
-        const static double RatioToEuro;
     public:
-        Dollar(double Val);
-        Dollar(const Dollar& Val);
+        Euro(double Val);
+        Euro(const Euro& Val);
         void afficher()const override;
         Devise* Clone() const;
         Dollar* ConverToDollar()const;

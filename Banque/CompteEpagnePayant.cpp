@@ -9,3 +9,8 @@ bool Banque::CompteEpagnePayant::debiter(Devise*D)
     if (!this->check_moitier(D))return false;
     return this->ComptePayant::debiter(D);
 }
+
+void Banque::CompteEpagnePayant::crediter(Devise*D)
+{
+    this->ComptePayant::crediter(D);
+}

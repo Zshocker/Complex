@@ -53,8 +53,11 @@ void Banque::Compte::add_pursontage(double D)
 
 bool Banque::Compte::check_moitier(Devise* D) const
 {
-	if (*solde / *(solde->Clone_no_convert(2)) >= *D)return true;
-	return false;
+	Devise&E = *solde / 2;
+	bool Res = false;
+	if (E >= *D) Res = true;
+	delete &E;
+	return Res;
 }
 
 bool Banque::Compte::check_Solde_sup(Devise& D) const

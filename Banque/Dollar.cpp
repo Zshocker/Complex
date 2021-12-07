@@ -1,11 +1,12 @@
 #include "Dollar.h"
 #include"MAD.h"
+#include"Euro.h"
 #include<iostream>
 using namespace std;
 using namespace Banque;
-const double Banque::Dollar::Ratio = 1;
-const double Banque::Dollar::RatioToMAD = 1;
-Banque::Dollar::Dollar(double Val) :Devise(Val / Ratio)
+const double Banque::Dollar::RatioToMAD = 9.24;
+const double Banque::Dollar::RatioToEuro = 1/1.13;
+Banque::Dollar::Dollar(double Val) :Devise(Val)
 {
 }
 
@@ -15,17 +16,13 @@ Banque::Dollar::Dollar(const Dollar& Val) : Devise(Val)
 
 void Banque::Dollar::afficher() const
 {
-	cout << this->convert(Ratio) << " Dollar" << endl;
+	this->Devise::afficher();
+	cout << " Dollar" << endl;
 }
 
 Devise* Banque::Dollar::Clone() const
 {
 	return new Dollar(*this);
-}
-
-Devise* Banque::Dollar::Clone_no_convert(double val) const
-{
-	return new Dollar(val*Ratio);
 }
 
 Dollar* Banque::Dollar::ConverToDollar() const
@@ -38,7 +35,8 @@ MAD* Banque::Dollar::ConverToMAD() const
 	return new MAD(this->convert(RatioToMAD));
 }
 
-double Banque::Dollar::value() const
+Euro* Banque::Dollar::ConverToEuro() const
 {
-	return this->convert(Ratio);
+	return new Euro(this->convert(RatioToEuro));
 }
+

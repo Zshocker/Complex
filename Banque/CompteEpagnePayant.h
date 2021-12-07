@@ -7,5 +7,6 @@ namespace Banque {
 	public :
 		CompteEpagnePayant(Client*, Devise*, Devise*,double);
 		bool debiter(Devise*);
+		void crediter(Devise*);
 	};
 }

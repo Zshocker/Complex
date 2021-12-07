@@ -10,8 +10,8 @@
 namespace Banque {
 	class AppBanque
 	{
-		vector<Client*> Clients;
-		int i = 0;
+		/*vector<Client*> Clients;
+		int i = 0;*/
 	public:
 		void Mymain()
 		{
@@ -19,7 +19,6 @@ namespace Banque {
 			CompteEpagnePayant A(Cl, new MAD(2000), new MAD(100),5);
 			int choix;
 			double Val;
-			MAD* VAL;
 			do
 			{
 				cout << "0-exit" << endl;
